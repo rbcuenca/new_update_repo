@@ -1,0 +1,16 @@
+#systemctl enable telinha.service
+
+
+[Unit]
+Description=telinha
+After=network.target
+
+[Service]
+#User=ubuntu
+User=root
+Type=forking
+ExecStart=/usr/bin/python3 /home/ubuntu/colcon_ws/src/new_update_repo/menu.py
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target 
