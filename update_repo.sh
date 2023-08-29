@@ -1,15 +1,15 @@
 #!/bin/bash
 echo "Atualizando repositorios..." >> ~/update_repo.txt
-cd /home/ubuntu/update_repo
+cd ~/colcon_ws/src/new_update_repo
 git pull
-echo "atualizando repositorio git bumper." >> ~/update_repo.txt
-cd /home/ubuntu/catkin_ws/src/bumper
+echo "atualizando repositorio git bumper_pkg." >> ~/update_repo.txt
+cd ~/colcon_ws/src/bumper_pkg
 git pull
-echo "atualizando repositorio git servo_arm." >> ~/update_repo.txt
-cd /home/ubuntu/catkin_ws/src/servo_arm
+echo "atualizando repositorio git servo_arm_pkg." >> ~/update_repo.txt
+cd ~/colcon_ws/src/servo_arm_pkg
 git pull
-echo "atualizando repositorio git servo_camera." >> ~/update_repo.txt
-cd /home/ubuntu/catkin_ws/src/servo_camera
+echo "atualizando repositorio git camera_servo_pkg." >> ~/update_repo.txt
+cd ~/colcon_ws/src/camera_servo_pkg
 git pull
 echo "Repositórios atualizados." >> ~/update_repo.txt
 date >> ~/update_repo.txt
