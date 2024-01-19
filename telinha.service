@@ -9,7 +9,7 @@ After=network.target
 #User=ubuntu
 User=root
 Type=forking
-ExecStart=/usr/bin/python3 /home/ubuntu/colcon_ws/src/new_update_repo/menu.py
+ExecStart=/usr/bin/python3 /home/ubuntu/turtle3_ws/src/new_update_repo/menu.py
 StandardOutput=journal
 
 [Install]
