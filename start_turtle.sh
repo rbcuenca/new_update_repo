@@ -17,7 +17,7 @@ screen -S ROBO -X screen -t SERVOARM bash -ic "ros2 launch servo_arm_pkg servo_a
 sleep 1
 screen -S ROBO -X screen -t BUMPER bash -ic "ros2 launch bumper_pkg bumper.launch.py"
 sleep 2
-screen -S ROBO -X screen -t TELINHA bash -ic "/usr/bin/python /home/ubuntu/colcon_ws/src/new_update_repo/menu.py"
+screen -S ROBO -X screen -t TELINHA bash -ic "/usr/bin/python /home/ubuntu/turtle3_ws/src/new_update_repo/menu.py"
 sleep 1
 screen -S ROBO -X screen -t BEEP bash -ic "rostopic pub -1 /sound turtlebot3_msgs/Sound 'value: 1'"
 
