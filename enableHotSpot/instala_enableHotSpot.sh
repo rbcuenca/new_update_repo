@@ -38,7 +38,7 @@ if [ ! -f "$ARQUIVO" ]; then
 fi
 
 # Substitui o texto antigo pelo novo
-sed -i "s/$TEXTO_ANTIGO/$NOVO_TEXTO/g" "$ARQUIVO"
+sudo sed -i "s/$TEXTO_ANTIGO/$NOVO_TEXTO/g" "$ARQUIVO"
 
 echo "Criando hotspot..."
 sudo cp enableHotSpot.sh /usr/bin/
