@@ -12,7 +12,7 @@ echo "Após a finalização o serviço de rede será reiniciado."
 #Atribuindo as variáveis segundo o novo nome do hostname que será o mesmo da rede e a senha.
 NEW_HOSTNAME=$1
 
-ARQUIVO=/usr/bin/enableHotSpot.sh
+ARQUIVO=enableHotSpot.sh
 TEXTO_ANTIGO="Nome_Rede"
 NOVO_TEXTO=$NEW_HOSTNAME
 
@@ -33,14 +33,17 @@ echo "Hostname alterado para $NEW_HOSTNAME com sucesso!"
 # Verifica se o arquivo existe
 if [ ! -f "$ARQUIVO" ]; then
   echo "Erro: O arquivo '$ARQUIVO' não existe."
-  echo "Criando hotspot..."
-  sudo cp enableHotSpot.sh /usr/bin/
-  sudo cp enableHotSpot.service /etc/systemd/system/
   exit 1
+
 fi
 
 # Substitui o texto antigo pelo novo
 sed -i "s/$TEXTO_ANTIGO/$NOVO_TEXTO/g" "$ARQUIVO"
+
+echo "Criando hotspot..."
+sudo cp enableHotSpot.sh /usr/bin/
+sudo cp enableHotSpot.service /etc/systemd/system/
+
 
 echo "Substituição concluída: '$TEXTO_ANTIGO' foi substituído por '$NOVO_TEXTO' em $ARQUIVO."
 
