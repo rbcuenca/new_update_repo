@@ -3,9 +3,9 @@
 
 echo "Atualizando start_turtle.sh"
 sudo rm -rf /usr/bin/start_turtle.sh
-sudo cp ~/turtlebot3_ws/src/new_update_repo/start_turtle.sh /usr/bin/start_turtle.sh
 sudo rm -rf /lib/systemd/system/start_turtle.service
 sudo rm -rf /lib/systemd/system/telinha.service
+sudo cp ~/turtlebot3_ws/src/new_update_repo/start_turtle.sh /usr/bin/start_turtle.sh
 sudo cp ~/turtlebot3_ws/src/new_update_repo/start_turtle.service /lib/systemd/system/
 sudo cp ~/turtlebot3_ws/src/new_update_repo/telinha.service /lib/systemd/system/
 
