@@ -14,14 +14,14 @@ if [ -z "$1" ]; then
 fi
 
 sudo apt update
-sudo apt install network-manager
+sudo apt install -y network-manager
 cp enableHotSpot.sh /usr/bin/enableHotSpot.sh
 cp enableHotSpot.service /lib/systemd/system/enableHotSpot.service
 
 NOVO_HOSTNAME="$1"
 ANTIGO_HOSTNAME=$(hostname)
 
-TEXTO_ANTIGO="InsperBot05"
+TEXTO_ANTIGO="TurtleBot01"
 ARQUIVO="/usr/bin/enableHotSpot.sh"
 
 # Altera o hostname permanentemente
