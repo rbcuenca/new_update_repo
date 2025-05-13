@@ -13,6 +13,11 @@ if [ -z "$1" ]; then
   exit 1
 fi
 
+sudo apt update
+sudo apt install netowrk-manager
+cp enableHotSpot.sh /usr/bin/enableHotSpot.sh
+cp enableHotSpot.service /lib/systemd/system/enableHotSpot.service
+
 NOVO_HOSTNAME="$1"
 ANTIGO_HOSTNAME=$(hostname)
 
@@ -35,7 +40,10 @@ else
   echo "Erro ao tentar substituir o texto."
 fi
 
-systemctl restart enableHotSpot.service
+systemctl stop enableHotSpot.service
+systemctl start enableHotSpot.service
+systemctl enable enableHotSpot.service
+systemctl daemon-reload
 
 echo "###############################################"
 echo "Hostname alterado para $NOVO_HOSTNAME."
