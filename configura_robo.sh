@@ -14,7 +14,7 @@ if [ -z "$1" ]; then
 fi
 
 sudo apt update
-sudo apt install netowrk-manager
+sudo apt install network-manager
 cp enableHotSpot.sh /usr/bin/enableHotSpot.sh
 cp enableHotSpot.service /lib/systemd/system/enableHotSpot.service
 
