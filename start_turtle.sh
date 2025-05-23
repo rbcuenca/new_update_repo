@@ -5,10 +5,10 @@
 screen -dmS ROBO bash
 #screen -S ROBO -X screen -t UPDATE_REPO bash -ic "bash /home/ubuntu/colcon_ws/src/new_update_repo/update_repo.sh"
 sleep 1
-#screen -S ROBO -X screen -t RASPICAM bash -ic "ros2 run v4l2_camera v4l2_camera_node"
-#sleep 5
-screen -S ROBO -X screen -t REALSENSE2 bash -ic "ros2 run realsense2_camera realsense2_camera_node"
+screen -S ROBO -X screen -t RASPICAM bash -ic "ros2 run camera_ros camera_node --ros-args -p format:='RGB888' -p width:=320 -p height:=240"
 sleep 5
+#screen -S ROBO -X screen -t REALSENSE2 bash -ic "ros2 run realsense2_camera realsense2_camera_node"
+#sleep 5
 screen -S ROBO -X screen -t LIDAR bash -ic "ros2 launch turtlebot3_bringup robot.launch.py"
 sleep 2
 screen -S ROBO -X screen -t SERVOCAM bash -ic "ros2 launch camera_servo_pkg camera_servo.launch.py"
